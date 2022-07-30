@@ -1,46 +1,37 @@
 ---
-description: Short description of the function.
+description: Delete a message with the given Message ID.
+
 ---
 
-# $function 
+# $deleteMessage 
 
-Explanation of the function and how does it work.
-
-> **This function *is not* an official function[^1].**
+This function deletes a message with the given message ID from the specified channel ID.
 
 ### Usage
  
-> *Declaring with '?' at the ends help to show it as 'optional'*
 
 ```php
-$function[param1;param2?]
+$deleteMessage[MessageID;ChannelID]
 ```
 
 ### Parameters 
 
-> *If there is even one parameter, it should be used.*
 
 | FIELD | TYPE | DESCRIPTION |
 | -------- | -------- | -------- |
-| param1 | string | It shows `param1` | 
-| param2 | integer | It shows `param2` | 
+| MessageID | string | The ID of the message we are deleting | 
+| ChannelID | integer | The channel we're the message is | 
 
-#### Parameter Types
-> *Required if the parameter has other options*
 
-* `a` — A type
-* `b` — B type
 
 ## Example(s)
 
 ```javascript
 bot.command({
-  name: 'function-name',
-  code: `
-  $function[index;aoijs]
-  `
-// Returns: ...
-});
+name: "delete-me",
+code: `Deleted the message!
+$deleteMessage[$message;$channelID]
+`
+})
 ```
 
-[^1]: You can also use footnotes to explain it on your way :)
